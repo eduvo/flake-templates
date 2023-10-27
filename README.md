@@ -12,9 +12,9 @@ sh <(curl -L https://nixos.org/nix/install)
 
 See https://nixos.org/download for other systems.
 
-### Enable Nix flakes
+### Nix flakes
 
-Nix flakes is a feature required to use the templates:
+Nix flakes is a feature to be enabled to use these templates:
 
 ``` shell
 echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
