@@ -9,13 +9,13 @@
 ### Use a template
 
 ```shell
-nix flake -t github:eduvo/flake-templates#<template>
+nix flake init -t github:eduvo/flake-templates#<template>
 ```
 
 For example,
 
 ```shell
-nix flake init -t github:eduvo/flake-templates#<template>
+nix flake init -t github:eduvo/flake-templates#rails-mysql
 ```
 
 ### Enable direnv
