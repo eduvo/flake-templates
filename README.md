@@ -32,13 +32,13 @@ specified in the template will be installed automatically.
 
 ### Run services
 
-Services are supported by `devenv`, which is installed automatically through template.
+Services are managed by [devenv](https://devenv.sh/), which is installed automatically.
 
 ``` shell
 devenv up
 ```
 
-For example, run in OpenApply
+For example, run in OpenApply:
 
 ``` shell
 ❱ devenv up
