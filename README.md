@@ -1,7 +1,7 @@
 # flake-templates
 
 ## Requirements
-- Nix: https://nixos.org/download#nix-install-macos
+- Nix: https://nixos.org/download
 - Direnv: https://github.com/nix-community/nix-direnv#installation
 
 ## Usage
