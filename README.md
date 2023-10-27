@@ -22,10 +22,11 @@ echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
 
 ### Direnv
 
-Install using `nix profile` for quick start:
+[Install with nix profile](https://github.com/nix-community/nix-direnv#with-nix-profile) for quick start:
 
 ``` shell
 nix profile install nixpkgs#nix-direnv
+echo 'source $HOME/.nix-profile/share/nix-direnv/direnvrc' >> $HOME/.config/direnv/direnvrc
 ```
 
 See https://github.com/nix-community/nix-direnv#installation for other ways.
