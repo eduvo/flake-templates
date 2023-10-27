@@ -4,13 +4,13 @@
 
 ### Nix
 
-If you are on macOS:
+For macOS:
 
 ``` shell
 sh <(curl -L https://nixos.org/nix/install)
 ```
 
-See https://nixos.org/download if you are on other systems.
+See https://nixos.org/download for other systems.
 
 ### Enable Nix flakes
 
