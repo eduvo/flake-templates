@@ -28,6 +28,8 @@ The dependencies and services (such as databases) specified in the template will
 
 ### Run services
 
+[Services](https://devenv.sh/services/#supported-services) are supported throught `devenv`, which is installed automatically through template.
+
 ``` shell
 devenv up
 ```
