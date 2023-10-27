@@ -18,6 +18,8 @@ For example,
 nix flake init -t github:eduvo/flake-templates#rails-mysql
 ```
 
+By using a template, the files of the `<template>` are downloaded to current directory.
+
 ### Enable direnv
 
 ``` shell
