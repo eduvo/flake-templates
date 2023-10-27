@@ -68,3 +68,8 @@ For example, run in OpenApply
 10:43:26 mysql.1           | 2023-10-27T02:43:26.545882Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
 10:43:26 mysql.1           | 2023-10-27T02:43:26.545911Z 0 [System] [MY-010931] [Server] /nix/store/mlx2mkbjh243gvhpfprr75sp2v85g3sf-mysql-8.0.34/bin/mysqld: ready for connections. Version: '8.0.34'  socket: '/Users/james/src/openapply/.devenv/state/mysql.sock'  port: 3306  Source distribution.
 ```
+
+## References
+- [Why you should give Nix a try?](https://nixos.org/guides/nix-pills/why-you-should-give-it-a-try)
+- [Nix language basics](https://nix.dev/tutorials/nix-language)
+- [Nix flakes](https://nixos.wiki/wiki/Flakes)
