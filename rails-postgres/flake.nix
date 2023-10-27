@@ -20,7 +20,10 @@
           default = devenv.lib.mkShell {
             inherit inputs pkgs;
             modules = with pkgs; [{
-              packages = [ ruby_3_2 ];
+              packages = [
+                ruby_3_2
+                libyaml # required to native compile psych gem
+              ];
 
               services.redis.enable = true;
               services.postgres = {
