@@ -1,8 +1,34 @@
 # flake-templates
 
 ## Requirements
-- Nix: https://nixos.org/download
-- Direnv: https://github.com/nix-community/nix-direnv#installation
+
+### Nix
+
+If you are on macOS:
+
+``` shell
+sh <(curl -L https://nixos.org/nix/install)
+```
+
+See https://nixos.org/download if you are on other systems.
+
+### Enable Nix flakes
+
+Nix flakes is a feature required to use the templates:
+
+``` shell
+echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
+```
+
+### Direnv
+
+Install using `nix profile` for quick start:
+
+``` shell
+nix profile install nixpkgs#nix-direnv
+```
+
+See https://github.com/nix-community/nix-direnv#installation for other ways.
 
 ## Usage
 
