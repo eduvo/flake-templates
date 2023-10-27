@@ -24,11 +24,13 @@ nix flake init -t github:eduvo/flake-templates#rails-mysql
 direnv allow
 ```
 
-The dependencies and services (such as databases) specified in the template will be installed automatically.
+The [packages](https://search.nixos.org/packages) and
+[services](https://devenv.sh/services/#supported-services) (such as databases)
+specified in the template will be installed automatically.
 
 ### Run services
 
-[Services](https://devenv.sh/services/#supported-services) are supported throught `devenv`, which is installed automatically through template.
+Services are supported by `devenv`, which is installed automatically through template.
 
 ``` shell
 devenv up
