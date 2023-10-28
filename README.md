@@ -26,7 +26,7 @@ echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
 
 ``` shell
 nix profile install nixpkgs#nix-direnv
-echo 'source $HOME/.nix-profile/share/nix-direnv/direnvrc' >> $HOME/.config/direnv/direnvrc
+echo 'source $HOME/.nix-profile/share/nix-direnv/direnvrc' >> ~/.config/direnv/direnvrc
 ```
 
 See https://github.com/nix-community/nix-direnv#installation for other ways.
