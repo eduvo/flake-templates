@@ -2,7 +2,7 @@
 
 ## Requirements
 
-See [wiki page](./wiki/Requirements).
+See [wiki page](https://github.com/eduvo/flake-templates/wiki/Requirements).
 
 ## Usage
 
