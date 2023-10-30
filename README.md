@@ -65,38 +65,45 @@ Services are managed by [devenv](https://devenv.sh/), which is installed automat
 devenv up
 ```
 
-For example, run in OpenApply:
+For example,
 
 ``` shell
-❱ devenv up
+> devenv up
 10:43:25 system            | memcached.1 started (pid=28338)
 10:43:25 system            | redis.1 started (pid=28339)
 10:43:25 system            | mysql-configure.1 started (pid=28340)
 10:43:25 system            | mysql.1 started (pid=28341)
-10:43:25 redis.1           | 28339:C 27 Oct 2023 10:43:25.811 # oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo
-10:43:25 redis.1           | 28339:C 27 Oct 2023 10:43:25.811 # Redis version=7.0.13, bits=64, commit=00000000, modified=0, pid=28339, just started
-10:43:25 redis.1           | 28339:C 27 Oct 2023 10:43:25.812 # Configuration loaded
-10:43:25 redis.1           | 28339:M 27 Oct 2023 10:43:25.812 * Increased maximum number of open files to 10032 (it was originally set to 256).
-10:43:25 redis.1           | 28339:M 27 Oct 2023 10:43:25.812 * monotonic clock: POSIX clock_gettime
-10:43:25 redis.1           | 28339:M 27 Oct 2023 10:43:25.813 * Running mode=standalone, port=6379.
-10:43:25 redis.1           | 28339:M 27 Oct 2023 10:43:25.813 # WARNING: The TCP backlog setting of 511 cannot be enforced because kern.ipc.somaxconn is set to the lower value of 128.
-10:43:25 redis.1           | 28339:M 27 Oct 2023 10:43:25.813 # Server initialized
-10:43:25 redis.1           | 28339:M 27 Oct 2023 10:43:25.814 * Loading RDB produced by version 7.0.13
-10:43:25 redis.1           | 28339:M 27 Oct 2023 10:43:25.814 * RDB age 155768 seconds
-10:43:25 redis.1           | 28339:M 27 Oct 2023 10:43:25.814 * RDB memory usage when created 1.46 Mb
-10:43:25 redis.1           | 28339:M 27 Oct 2023 10:43:25.814 * Done loading RDB, keys loaded: 18, keys expired: 1.
-10:43:25 redis.1           | 28339:M 27 Oct 2023 10:43:25.814 * DB loaded from disk: 0.001 seconds
-10:43:25 redis.1           | 28339:M 27 Oct 2023 10:43:25.814 * Ready to accept connections
-10:43:26 mysql.1           | 2023-10-27T02:43:26.060051Z 0 [System] [MY-010116] [Server] /nix/store/mlx2mkbjh243gvhpfprr75sp2v85g3sf-mysql-8.0.34/bin/mysqld (mysqld 8.0.34) starting as process 28341
-10:43:26 mysql.1           | 2023-10-27T02:43:26.065926Z 0 [Warning] [MY-010159] [Server] Setting lower_case_table_names=2 because file system for /Users/james/src/openapply/.devenv/state/mysql/ is case insensitive
-10:43:26 mysql.1           | 2023-10-27T02:43:26.083760Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
-10:43:26 mysql.1           | 2023-10-27T02:43:26.263768Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
-10:43:26 mysql.1           | 2023-10-27T02:43:26.390593Z 0 [ERROR] [MY-011300] [Server] Plugin mysqlx reported: 'Setup of socket: '/run/mysqld/mysqlx.sock' failed, can't create lock file /run/mysqld/mysqlx.sock.lock'
-10:43:26 mysql.1           | 2023-10-27T02:43:26.412229Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
-10:43:26 mysql.1           | 2023-10-27T02:43:26.412245Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
-10:43:26 mysql.1           | 2023-10-27T02:43:26.545882Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060
-10:43:26 mysql.1           | 2023-10-27T02:43:26.545911Z 0 [System] [MY-010931] [Server] /nix/store/mlx2mkbjh243gvhpfprr75sp2v85g3sf-mysql-8.0.34/bin/mysqld: ready for connections. Version: '8.0.34'  socket: '/Users/james/src/openapply/.devenv/state/mysql.sock'  port: 3306  Source distribution.
 ```
+
+### Procfile-based applications
+If you're using [foreman](https://github.com/ddollar/foreman) to manage your
+application processes, add `devenv up` to `Procfile`, so you can run a single
+command for development.
+
+For example, given the `Procfile`:
+
+```
+web: rails server -p 3000
+js: yarn build --watch
+css: yarn build:css --watch
+sidekiq: bundle exec sidekiq -C config/sidekiq.yml
+ngrok: ngrok http --domain=fariapay.ngrok.dev 3000
+devenv: devenv up
+```
+
+Run the `dev` command starts all processes:
+
+``` shell
+> dev
+10:28:35 web.1     | started with pid 63731
+10:28:35 js.1      | started with pid 63732
+10:28:35 css.1     | started with pid 63733
+10:28:35 sidekiq.1 | started with pid 63734
+10:28:35 ngrok.1   | started with pid 63735
+10:28:35 devenv.1  | started with pid 63736
+```
+
+Notice no need to add `bin` as it is already in the `PATH` magically.
 
 ## References
 - [Why you should give Nix a try?](https://nixos.org/guides/nix-pills/why-you-should-give-it-a-try)
