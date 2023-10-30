@@ -76,7 +76,7 @@ Run the `dev` command starts all processes:
 10:28:35 devenv.1  | started with pid 63736
 ```
 
-Notice no need to use `bin/dev` as `bin` is already added to the `PATH` variable.
+Notice no need to use `bin/dev` as `bin` is already added to the `PATH` environment variable.
 
 ## References
 - [Why you should give Nix a try?](https://nixos.org/guides/nix-pills/why-you-should-give-it-a-try)
