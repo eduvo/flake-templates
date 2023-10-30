@@ -2,34 +2,7 @@
 
 ## Requirements
 
-### Nix
-
-For macOS:
-
-``` shell
-sh <(curl -L https://nixos.org/nix/install)
-```
-
-See https://nixos.org/download for other systems.
-
-### Nix flakes
-
-Nix flakes is a feature to be enabled to use these templates:
-
-``` shell
-echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
-```
-
-### Direnv
-
-[Install with nix profile](https://github.com/nix-community/nix-direnv#with-nix-profile) for quick start:
-
-``` shell
-nix profile install nixpkgs#nix-direnv
-echo 'source $HOME/.nix-profile/share/nix-direnv/direnvrc' >> ~/.config/direnv/direnvrc
-```
-
-See https://github.com/nix-community/nix-direnv#installation for other ways.
+See [wiki page](./wiki/Requirements).
 
 ## Usage
 
