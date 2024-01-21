@@ -11,6 +11,10 @@
         path = ./rails-mysql;
         description = "Rails development environment with MySQL";
       };
+      azure-openai-playground = {
+        path = ./azure-openai-playground;
+        description = "Azure OpenAI playground using Jupyter Notebook";
+      };
     };
   };
 }
