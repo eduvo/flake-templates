@@ -7,7 +7,7 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
-        python-packages = ps: with ps; [ jupyter ipython openai python-dotenv ];
+        python-packages = ps: with ps; [ jupyter python-dotenv openai ];
       in {
         devShells.default = pkgs.mkShell {
           packages = [ (pkgs.python3.withPackages python-packages) ];
